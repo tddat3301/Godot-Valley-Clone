@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bha5l5ebvgeeo"]
+
+[ext_resource type="Script" uid="uid://dfwfjf6m2f73h" path="res://scenes/UI/plant_info_container.gd" id="1_pfd5f"]
+
+[node name="PlantInfoContainer" type="Control" unique_id=1703036254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfd5f")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1407734438]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=657264895]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=564201150]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

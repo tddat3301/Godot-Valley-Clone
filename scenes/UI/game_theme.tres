@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://cmifjaxkthoq1"]
+
+[ext_resource type="Texture2D" uid="uid://c8w5bgiupw84o" path="res://graphics/ui/frame.png" id="1_d5qbn"]
+
+[sub_resource type="FontVariation" id="FontVariation_gemwj"]
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2js3"]
+texture = ExtResource("1_d5qbn")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[resource]
+Label/colors/font_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+Label/font_sizes/font_size = 20
+Label/fonts/font = SubResource("FontVariation_gemwj")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_w2js3")

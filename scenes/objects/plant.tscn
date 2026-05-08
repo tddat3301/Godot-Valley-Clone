@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://28kpv4x5mqys"]
+
+[ext_resource type="Script" uid="uid://btv8rihhprqo5" path="res://scenes/objects/plant.gd" id="1_fvfks"]
+[ext_resource type="Script" uid="uid://dxqxo3qixa6q2" path="res://resouces/plant_res.gd" id="2_7bmar"]
+[ext_resource type="PackedScene" uid="uid://x5giujuvps0l" path="res://scenes/vfx/flash_sprite_2d.tscn" id="3_0a33w"]
+[ext_resource type="Shader" uid="uid://d2wh0xo4566js" path="res://shaders/flash.tres" id="4_yb5fs"]
+
+[sub_resource type="Resource" id="Resource_0a33w"]
+script = ExtResource("2_7bmar")
+metadata/_custom_type_script = "uid://dxqxo3qixa6q2"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvfks"]
+radius = 2.0
+height = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7bmar"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a33w"]
+resource_local_to_scene = true
+shader = ExtResource("4_yb5fs")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
+[node name="Plant" type="StaticBody2D" unique_id=1110824295 groups=["Plants"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_fvfks")
+res = SubResource("Resource_0a33w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=60115541]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_fvfks")
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=1752586453]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1487715582]
+shape = SubResource("CircleShape2D_7bmar")
+
+[node name="FlashSprite2D" parent="." unique_id=1649652226 instance=ExtResource("3_0a33w")]
+material = SubResource("ShaderMaterial_0a33w")
+position = Vector2(0, -9)
+hframes = 4
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bg1y1js3ucgsd"]
+
+[ext_resource type="Theme" uid="uid://cmifjaxkthoq1" path="res://scenes/UI/game_theme.tres" id="1_i1ty1"]
+[ext_resource type="Texture2D" uid="uid://dlh3xrk6a5cu" path="res://graphics/icons/tomato.png" id="1_v621c"]
+[ext_resource type="Script" uid="uid://d0fe8pjp6b7n" path="res://scenes/UI/plant_info.gd" id="2_blp4e"]
+[ext_resource type="Texture2D" uid="uid://k4r0km103lsj" path="res://graphics/ui/v_bar.png" id="2_i1ty1"]
+
+[node name="PlantInfo" type="PanelContainer" unique_id=628425705]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_i1ty1")
+script = ExtResource("2_blp4e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=66874855]
+layout_mode = 2
+
+[node name="IconTexture" type="TextureRect" parent="HBoxContainer" unique_id=1727709272]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("1_v621c")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=300305835]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=509069626]
+layout_mode = 2
+text = "Tomato"
+
+[node name="GrowthBar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=828036441]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+value = 10.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_i1ty1")
+texture_progress = ExtResource("2_i1ty1")
+tint_under = Color(0.21518216, 0.21518219, 0.21518219, 1)
+tint_progress = Color(0.56078434, 0.8392157, 0.18431373, 1)
+
+[node name="DeathBar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1436077540]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+value = 10.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_i1ty1")
+texture_progress = ExtResource("2_i1ty1")
+tint_under = Color(0.21568628, 0.21568628, 0.21568628, 1)
+tint_progress = Color(0.9529412, 0.36078432, 0.13725491, 1)
